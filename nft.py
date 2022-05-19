@@ -1,8 +1,9 @@
 from PIL import Image
-from IPython.display import display
 import random
-import json
 import os
+
+# Each image is made up a series of traits
+# The weightings for each trait drive the rarity and add up to 100%
 
 face = ["White", "Black"]
 face_weights = [60, 40]
@@ -26,6 +27,8 @@ mouth_weights = [10, 10,50, 10,15, 5]
 
 nose = ['Nose', 'Nose Ring']
 nose_weights = [90, 10]
+
+#Classify traits
 
 face_files = {
     "White": "face1",
@@ -77,6 +80,8 @@ nose_files = {
     "Nose Ring": "n2"   
 }
 
+## Generate Traits
+
 TOTAL_IMAGES = 100 # Number of random unique images we want to generate
 
 all_images = [] 
@@ -107,6 +112,7 @@ for i in range(TOTAL_IMAGES):
     
     all_images.append(new_trait_image)
 
+# Returns true if all images are unique
 def all_images_unique(all_images):
     seen = list()
     return not any(i in seen or seen.append(i) for i in all_images)
@@ -119,6 +125,8 @@ for item in all_images:
     i = i + 1
    
 print(all_images)
+
+# Get Trait Counts
 
 face_count = {}
 for item in face:
@@ -159,6 +167,8 @@ print(hair_count)
 print(mouth_count)
 print(nose_count)
 
+#### Generate Images
+
 os.mkdir(f'./images')
 
 for item in all_images:
@@ -183,3 +193,5 @@ for item in all_images:
     rgb_im = com5.convert('RGB')
     file_name = str(item["tokenId"]) + ".png"
     rgb_im.save("./images/" + file_name)
+
+    
