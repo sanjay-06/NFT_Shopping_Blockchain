@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../static/css/templatemo-style.css">
-
 </head>
 <body>
     <!-- Page Loader -->
@@ -48,12 +47,17 @@
             <img src="../static/images/{{image}}" alt="Image" class="img-fluid" style="margin-left: 15%;">
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="tm-bg-gray tm-video-details">
-                    <p class="mb-4">
-                        Please support us by making <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a PayPal donation</a>. Nam ex nibh, efficitur eget libero ut, placerat aliquet justo. Cras nec varius leo.
-                    </p>
+                <form method="post" action="/create_block/{{image}}">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Enter your name</label>
+                        <input type="text" name="name" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the name">
+                        <small id="emailHelp" class="form-text text-muted">Be carefull it is the name stored in block and cant be changed</small>
+                    </div>
                     <div class="text-center mb-5">
-                        <a href="/mine_block/{{image}}" class="btn btn-primary tm-btn-big">Buy</a>
-                    </div>                    
+                        <button type="submit" class="btn btn-primary tm-btn-big">Buy</a>
+                    </div>   
+                </form>
+                                     
                     <div class="mb-4 d-flex flex-wrap">
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Dimension: </span><span class="tm-text-primary">1920x1080</span>
@@ -64,7 +68,7 @@
                     </div>
                     <div class="mb-4">
                         <h3 class="tm-text-gray-dark mb-3">License</h3>
-                        <p>Free for both personal and commercial use. No need to pay anything. No need to make any attribution.</p>
+                        <p>Buy the image will give you a key and actual image</p>
                     </div>
                     <div>
                         <h3 class="tm-text-gray-dark mb-3">Tags</h3>

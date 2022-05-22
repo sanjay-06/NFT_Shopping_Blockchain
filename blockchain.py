@@ -11,7 +11,8 @@ class Blockchain:
 	def create_block(self, proof, previous_hash, imageurl, owner):
 		block = {'index': len(self.chain) + 1,
 				'timestamp': str(datetime.datetime.now()),
-				'image': imageurl,
+				'image': self.hash({"key":imageurl+" "+owner}),
+				'imageurl': imageurl,
 				'proof': proof,
 				'owner' : owner,
 				'previous_hash': previous_hash}
