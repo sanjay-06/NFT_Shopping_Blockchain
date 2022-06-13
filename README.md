@@ -51,3 +51,11 @@ The motive is to create a NFT using fungibles such as hair, sunglass etc. to cre
 
 ![website](screenshots/website.png)
 
+
+# Team
+<br>
+
+```
+Daniel Davidraj M – 19PW09
+Sanjay T – 19PW28
+```
